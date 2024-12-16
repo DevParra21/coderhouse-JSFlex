@@ -80,21 +80,22 @@
                             <!-- dropdown de tipo de servicios -->
                             <div class="row">
                                 <div class="col-md-8 my-2">
-                                    <label class="form-label" for="cbServicios1" name="lblServicios1">Servicios</label>
+                                    <label class="form-label" for="cbServicios1" name="lblServicios1">Servicios (máximo 3)</label>
                                         <select class="form-select" id="cbServicios1" name="cbServicios1" required>
+                                            <option value="0">Seleccione un servicio...</option>
                                         </select>
-                                        <div class="invalid-feedback">
-                                            Seleccione al menos un servicio
+                                        <div class="service-error-message">
+                                           <small class="help-block">Seleccione al menos un servicio</small>
                                         </div>
                                 </div>
                                 <div class="col-md-8 my-2" id="servicio2">
-                                    <label class="form-label" for="cbServicios2" name="lblServicios2">Seleccione un Servicio</label>
                                         <select class="form-select" id="cbServicios2" name="cbServicios2">
+                                            <option value="0">Seleccione un servicio...</option>
                                         </select>
                                 </div>
                                 <div class="col-md-8 my-2" id="servicio3">
-                                    <label class="form-label" for="cbServicios3" name="lblServicios3">Seleccione un Servicio</label>
                                         <select class="form-select" id="cbServicios3" name="cbServicios3">
+                                            <option value="0">Seleccione un servicio...</option>
                                         </select>
                                 </div>
                                 <div class="col-md-5 my-2">
@@ -102,8 +103,8 @@
                                 </div>
                             </div>
                             <div class="row my-3">
-                                <div class="col-md-5">
-                                    <h3>Monto total: $<span id="totalAmount">100</span></h3>
+                                <div class="col-md-6">
+                                    <h3>Monto total: $<span id="totalAmount"></span></h3>
                                 </div>
                                 <div class="col-md-4">
                                     <input class="btn btn-success" type="submit" value="Agendar">
