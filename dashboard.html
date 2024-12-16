@@ -33,11 +33,11 @@
                     </div>
                     <div class="my-5">
                         <h3>Agendar una cita nueva</h3>
-                        <form class="needs-validation was-validated" novalidate="">
+                        <form name="appointmentForm" action="javascript:;" method="POST">
                             <div class="row my-3">
                                 <div class="col-md-8">
                                     <label for="validationPetName" class="form-label">Nombre de Mascota</label>
-                                    <input type="text" class="form-control" id="validationPetName" value="" required="">
+                                    <input type="text" class="form-control" id="validationPetName" value="" required>
                                     <div class="invalid-feedback">
                                     <span id="nameErrorMessage">Este campo no puede estar vacío</span>
                                     </div>
@@ -45,33 +45,29 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-8">
-                                    <label class="form-label" for="cbHospital">Seleccione una Clínica</label>
-                                        <select class="form-select" id="cbHospital">
-                                          <option selected>...</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
+                                    <label class="form-label" for="cbClinicas">Clínica</label>
+                                        <select class="form-select" id="cbClinicas">
                                         </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="validationDate">Seleccione una fecha</label>
-                                    <input class="form-control" type="date" data-provide="datepicker" id="validationDate">
+                                    <label class="form-label" for="fechaCita">Seleccione una fecha</label>
+                                    <input class="form-control" type="date" data-provide="datepicker" id="fechCita" name="fechaCita">
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="form-label" for="cbHospital">Seleccione un horario</label>
-                                        <select class="form-select" id="cbHospital">
+                                    <label class="form-label" for="cbHorario">Seleccione un horario</label>
+                                        <select class="form-select" id="cbHorario">
                                           <option selected>...</option>
-                                          <option value="1">08:00</option>
-                                          <option value="1">09:00</option>
-                                          <option value="1">10:00</option>
-                                          <option value="1">11:00</option>
-                                          <option value="1">12:00</option>
-                                          <option value="1">13:00</option>
-                                          <option value="1">14:00</option>
-                                          <option value="1">15:00</option>
-                                          <option value="1">16:00</option>
+                                          <option value="8">08:00</option>
+                                          <option value="9">09:00</option>
+                                          <option value="10">10:00</option>
+                                          <option value="11">11:00</option>
+                                          <option value="12">12:00</option>
+                                          <option value="13">13:00</option>
+                                          <option value="14">14:00</option>
+                                          <option value="15">15:00</option>
+                                          <option value="16">16:00</option>
                                         </select>
                                 </div>
                             </div>
@@ -82,25 +78,41 @@
                                 </div>
                             </div>
                             <!-- dropdown de tipo de servicios -->
-                            <div class="row mb-3">
-                                <div class="col-md-8">
-                                    <label class="form-label" for="cbHospital">Seleccione un Servicio</label>
-                                        <select class="form-select" id="cbHospital">
-                                          <option selected>...</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
+                            <div class="row">
+                                <div class="col-md-8 my-2">
+                                    <label class="form-label" for="cbServicios1" name="lblServicios1">Servicios</label>
+                                        <select class="form-select" id="cbServicios1" name="cbServicios1" required>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Seleccione al menos un servicio
+                                        </div>
+                                </div>
+                                <div class="col-md-8 my-2" id="servicio2">
+                                    <label class="form-label" for="cbServicios2" name="lblServicios2">Seleccione un Servicio</label>
+                                        <select class="form-select" id="cbServicios2" name="cbServicios2">
                                         </select>
                                 </div>
-                                <div class="col-md-1">
-                                    <button class="btn btn-primary" id="addService"><span>+</span></button>
-
+                                <div class="col-md-8 my-2" id="servicio3">
+                                    <label class="form-label" for="cbServicios3" name="lblServicios3">Seleccione un Servicio</label>
+                                        <select class="form-select" id="cbServicios3" name="cbServicios3">
+                                        </select>
+                                </div>
+                                <div class="col-md-5 my-2">
+                                    <button class="btn btn-primary" type="button" id="btnService" onclick="addService()">Agregar servicio</button>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-md-5">
+                                    <h3>Monto total: $<span id="totalAmount">100</span></h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="btn btn-success" type="submit" value="Agendar">
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-lg">
+                <div class="col-lg mt-5">
                     <table class="table">
                         <thead>
                           <tr>
