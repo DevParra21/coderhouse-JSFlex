@@ -168,18 +168,18 @@ function addService(){
 }
 
 //Llenar lista de Reservaciones
-let lsAppointments = document.getElementById("tableAppointments")
-lsAppointments.innerHTML=""
-let tableData=""
+let tableData= document.getElementById("appointmentData")
+tableData.innerHTML=""
+let tr=""
 for(let i=0; i < Reservaciones.length; i++){
-    tableData+="<tr>"
-    tableData+="<td>"+Reservaciones[i].citaID+"</td>"+"<td>"+Reservaciones[i].nombreMascota+
+    tr+="<tr>"
+    tr+="<td>"+Reservaciones[i].citaID+"</td>"+"<td>"+Reservaciones[i].nombreMascota+
     "</td>"+"<td><a href=\"" + Reservaciones[i].urlClinica + "\">"
     +Reservaciones[i].nombreClinica+"</a></td>"+
     "<td>"+Reservaciones[i].fecha+" "+Reservaciones[i].hora+"</td>"
-    tableData+="</tr>"
+    tr+="</tr>"
 }
-lsAppointments.innerHTML=tableData
+tableData.innerHTML = tr
 
 
 
